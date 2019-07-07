@@ -38,7 +38,10 @@
             this.AvgPtcLB = new System.Windows.Forms.Label();
             this.ExpGCDLB = new System.Windows.Forms.Label();
             this.RefreshTimer = new System.Windows.Forms.Timer(this.components);
-            this.checkMTA = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ThreadSet = new System.Windows.Forms.NumericUpDown();
+            this.ProgressLB = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.ThreadSet)).BeginInit();
             this.SuspendLayout();
             // 
             // RepeatBox
@@ -90,9 +93,9 @@
             this.AvgPtcLB.AutoSize = true;
             this.AvgPtcLB.Location = new System.Drawing.Point(45, 184);
             this.AvgPtcLB.Name = "AvgPtcLB";
-            this.AvgPtcLB.Size = new System.Drawing.Size(113, 27);
+            this.AvgPtcLB.Size = new System.Drawing.Size(123, 27);
             this.AvgPtcLB.TabIndex = 5;
-            this.AvgPtcLB.Text = "Avg. Ptc: 0";
+            this.AvgPtcLB.Text = "Avg. PPG: 0";
             // 
             // ExpGCDLB
             // 
@@ -106,26 +109,56 @@
             // 
             // RefreshTimer
             // 
-            this.RefreshTimer.Enabled = true;
-            this.RefreshTimer.Interval = 1000;
             this.RefreshTimer.Tick += new System.EventHandler(this.RefreshTimer_Tick);
             // 
-            // checkMTA
+            // label3
             // 
-            this.checkMTA.AutoSize = true;
-            this.checkMTA.Location = new System.Drawing.Point(50, 29);
-            this.checkMTA.Name = "checkMTA";
-            this.checkMTA.Size = new System.Drawing.Size(259, 31);
-            this.checkMTA.TabIndex = 7;
-            this.checkMTA.Text = "Multi Thread Accelerate";
-            this.checkMTA.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(45, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 27);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Thread";
+            // 
+            // ThreadSet
+            // 
+            this.ThreadSet.Location = new System.Drawing.Point(129, 21);
+            this.ThreadSet.Maximum = new decimal(new int[] {
+            64,
+            0,
+            0,
+            0});
+            this.ThreadSet.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.ThreadSet.Name = "ThreadSet";
+            this.ThreadSet.Size = new System.Drawing.Size(120, 33);
+            this.ThreadSet.TabIndex = 8;
+            this.ThreadSet.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // ProgressLB
+            // 
+            this.ProgressLB.Location = new System.Drawing.Point(149, 152);
+            this.ProgressLB.Name = "ProgressLB";
+            this.ProgressLB.Size = new System.Drawing.Size(200, 27);
+            this.ProgressLB.TabIndex = 9;
+            this.ProgressLB.Text = "0/0";
+            this.ProgressLB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(501, 231);
-            this.Controls.Add(this.checkMTA);
+            this.Controls.Add(this.ProgressLB);
+            this.Controls.Add(this.ThreadSet);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.ExpGCDLB);
             this.Controls.Add(this.AvgPtcLB);
             this.Controls.Add(this.StartBtn);
@@ -139,6 +172,7 @@
             this.Name = "MainForm";
             this.Text = "TC Emulator Altn";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.ThreadSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,7 +188,9 @@
         private System.Windows.Forms.Label AvgPtcLB;
         private System.Windows.Forms.Label ExpGCDLB;
         private System.Windows.Forms.Timer RefreshTimer;
-        private System.Windows.Forms.CheckBox checkMTA;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown ThreadSet;
+        private System.Windows.Forms.Label ProgressLB;
     }
 }
 
